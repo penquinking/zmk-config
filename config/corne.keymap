@@ -10,35 +10,9 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        lower_layer {
-            bindings = <&mo 1>;
-            key-positions = <40 13>;
-        };
-
-        raise_layer {
-            bindings = <&mo 2>;
-            key-positions = <14 40>;
-        };
-
-        arrow_layer {
-            bindings = <&mo 3>;
-            key-positions = <40 15>;
-        };
-
-        new_combo {
-            bindings = <&reset>;
-            key-positions = <0 11>;
-        };
     };
 
     macros {
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            label = "new_macro";
-            #binding-cells = <0>;
-            bindings = <>;
-        };
     };
 
     keymap {
@@ -52,10 +26,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-   &kp TAB   &kp Q   &kp W             &kp E     &kp R          &kp T      &kp Y    &kp U      &kp I    &kp O     &kp P               &kp BSPC
- &kp LCTRL   &kp A   &kp S             &kp D     &kp F          &kp G      &kp H    &kp J      &kp K    &kp L  &kp SEMI                &kp SQT
- &kp LSHFT   &kp Z   &kp X             &kp C     &kp V          &kp B      &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt RIGHT_SHIFT ENTER
-                            &kp LEFT_CONTROL  &kp LCMD  &kp BACKSPACE  &kp SPACE  &kp F22   &kp RALT
+   &kp TAB   &kp Q   &kp W             &kp E     &kp R          &kp T              &kp Y    &kp U      &kp I    &kp O     &kp P               &kp BSPC
+ &kp LCTRL   &kp A   &kp S             &kp D     &kp F          &kp G              &kp H    &kp J      &kp K    &kp L  &kp SEMI                &kp SQT
+ &kp LSHFT   &kp Z   &kp X             &kp C     &kp V          &kp B              &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt RIGHT_SHIFT ENTER
+                            &kp LEFT_CONTROL  &kp LCMD  &kp BACKSPACE          &kp SPACE  &kp F22   &kp RALT
             >;
         };
 
@@ -67,10 +41,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
- &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6        &kp N7        &kp N8        &kp N9     &kp N0  &kp BACKSPACE
-  &trans  &trans  &trans  &trans  &trans  &trans  &kp ASTERISK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6   &kp PLUS      &kp EQUAL
-  &trans  &trans  &trans  &trans  &trans  &trans     &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS         &trans
-                          &trans  &trans  &trans         &mo 0       &kp DOT  &kp NUMBER_0
+ &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                &kp N6        &kp N7        &kp N8        &kp N9     &kp N0  &kp BACKSPACE
+  &trans  &trans  &trans  &trans  &trans  &trans          &kp ASTERISK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6   &kp PLUS      &kp EQUAL
+  &trans  &trans  &trans  &trans  &trans  &trans             &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS         &trans
+                          &trans  &trans  &trans                 &mo 0       &kp DOT  &kp NUMBER_0
             >;
         };
 
@@ -82,28 +56,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
- &kp GRAVE   &kp EXCL     &kp AT   &kp HASH        &kp DLLR         &kp PRCNT          &kp CARET         &kp AMPS  &kp KP_MULTIPLY   &kp LPAR     &kp RPAR   &kp BSPC
-    &trans  &kp TILDE  &kp QMARK  &kp SLASH  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_BRACE    &kp BACKSLASH  &kp MINUS  &kp KP_PLUS   &kp PIPE
-    &trans     &trans     &trans     &trans          &trans            &trans          &kp UNDER         &kp PLUS         &kp LBRC  &kp UNDER    &kp EQUAL  &kp TILDE
-                                     &trans          &trans            &trans              &mo 0           &trans           &trans
+ &kp GRAVE   &kp EXCL     &kp AT   &kp HASH        &kp DLLR         &kp PRCNT                  &kp CARET         &kp AMPS  &kp KP_MULTIPLY   &kp LPAR     &kp RPAR   &kp BSPC
+    &trans  &kp TILDE  &kp QMARK  &kp SLASH  &kp LEFT_BRACE  &kp LEFT_BRACKET          &kp RIGHT_BRACKET  &kp RIGHT_BRACE    &kp BACKSLASH  &kp MINUS  &kp KP_PLUS   &kp PIPE
+    &trans     &trans     &trans     &trans          &trans            &trans                  &kp UNDER         &kp PLUS         &kp LBRC  &kp UNDER    &kp EQUAL  &kp TILDE
+                                     &trans          &trans            &trans                      &mo 0           &trans           &trans
             >;
         };
 
         ARROW_LAYER {
             bindings = <
- &trans  &kp F1   &kp F2   &kp F3   &kp F4  &trans  &trans     &kp PAGE_UP    &trans  &trans   &kp HOME  &kp DEL
- &trans  &kp F5   &kp F6   &kp F7   &kp F8  &trans  &trans  &kp LEFT_ARROW  &kp DOWN  &kp UP  &kp RIGHT   &trans
- &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans   &kp PAGE_DOWN    &trans  &trans     &trans   &trans
-                           &trans   &trans  &trans   &mo 0          &trans    &trans
-            >;
-        };
-
-        Layer__4 {
-            bindings = <
- &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans  &trans  &trans  &trans
+ &trans  &kp F1   &kp F2   &kp F3   &kp F4  &trans          &trans     &kp PAGE_UP    &trans  &trans   &kp HOME  &kp DEL
+ &trans  &kp F5   &kp F6   &kp F7   &kp F8  &trans          &trans  &kp LEFT_ARROW  &kp DOWN  &kp UP  &kp RIGHT   &trans
+ &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans          &trans   &kp PAGE_DOWN    &trans  &trans     &trans   &trans
+                           &trans   &trans  &trans           &mo 0          &trans    &trans
             >;
         };
     };
