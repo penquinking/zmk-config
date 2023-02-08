@@ -71,10 +71,10 @@
 
         ARROW_LAYER {
             bindings = <
-&trans       &kp PG_UP          &kp UP     &trans    &kp HOME    &trans    &trans  &kp PG_UP  &trans    &trans   &kp HOME  &kp BACKSPACE
-&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &bt BT_CLR    &trans    &trans   &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT         &trans
-&trans       &kp PG_DN          &trans     &trans      &trans    &trans    &trans  &kp PG_DN  &trans    &trans     &trans         &trans
-                                           &trans      &trans  &kp RCMD     &mo 0     &trans  &trans
+&trans       &kp PG_UP          &kp UP     &trans    &kp HOME    &trans    &trans  &kp PG_UP    &trans  &trans   &kp HOME  &kp BACKSPACE
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &bt BT_CLR    &trans    &trans   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT         &trans
+&trans       &kp PG_DN          &trans     &trans      &trans    &trans    &trans  &kp PG_DN    &trans  &trans     &trans         &trans
+                                           &trans      &trans  &kp RCMD     &mo 0     &trans    &trans
             >;
         };
     };
